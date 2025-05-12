@@ -59,14 +59,14 @@ y_predicted
 ```
 The fit_predict() method does two things:
 Fit: It trains the KMeans model on the provided data (i.e df[['Age', 'Income']]). It finds the centroids of clusters by minimizing the within-cluster variance.
-Predict: After fitting the model, it predicts which cluster each data point belongs to. The result is an array where each value corresponds to the cluster label assigned to each data point in df[['Age', 'Income']].<br>
+Predict: After fitting the model, it predicts which cluster each data point belongs to. The result is an array where each value corresponds to the cluster label assigned to each data point in df[['Age', 'Income']].
 
 **4.3 Step-3**
 ```python
 df['cluster']=y_predicted
 df
 ```
-Adds the predicted cluster label 'y_predicted' as a new column in the DataFrame df.<br>
+Adds the predicted cluster label 'y_predicted' as a new column in the DataFrame df.
 
 **4.4 Step-4**
 ```python
@@ -74,7 +74,7 @@ df1=df[df.cluster==0]
 df2=df[df.cluster==1]
 df3=df[df.cluster==2]
 ```
-This code creates three new DataFrames (df1, df2, and df3) by filtering the original DataFrame df based on the cluster labels.<br>
+This code creates three new DataFrames (df1, df2, and df3) by filtering the original DataFrame df based on the cluster labels.
 
 **4.5 Step-5**
 ```python
@@ -86,7 +86,7 @@ plt.ylabel('Income')
 plt.legend()
 ```
 This code creates a scatter plot which visually represent the data points from three clusters (df1, df2, and df3) with Age on the x-axis and Income on the y-axis.
-Each cluster group in the DataFrame is assigned a unique color to make it easier to distinguish between the groups.<br>
+Each cluster group in the DataFrame is assigned a unique color to make it easier to distinguish between the groups.
 
 **4.6 Step-6**
 ```python
@@ -98,7 +98,7 @@ df['Age']=scalar.transform(df[['Age']])
 df
 ```
 This code uses the MinMaxScaler from scikit-learn to scale the Income and Age columns in the DataFrame df so that their values are transformed into a specific range (i.e between 0 and 1)
-This makes the data comparable and ready for algorithm.<br>
+This makes the data comparable and ready for algorithm.
 
 **4.7 Step-7 : Processing the data again for plotting the scatter plot with updated values(i.e the values we transformed in the range of 0 and 1 using MinMaxScaler )**
 ```python
